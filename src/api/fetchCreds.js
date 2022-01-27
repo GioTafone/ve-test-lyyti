@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+let API_URL = `${process.env.REACT_APP_API_URL_DEVELOPMENT}`
+console.log(API_URL);
+// if (
+//   process.env.NODE_ENV === 'production' &&
+//   process.env.REACT_APP_API_URL_PRODUCTION
+// ) {
+//   API_URL = `${process.env.REACT_APP_API_URL_PRODUCTION}`};
+//  } else {
+//    API_URL = `${window.location.origin}`;
+//  }
+
+export const getCredentials = async (roomName) => {
+  return axios.get(`${API_URL}/session/${roomName}`);
+};
+console.log(getCredentials())
